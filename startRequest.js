@@ -6,13 +6,15 @@ async function startRequest(owner, repository) {
 
         let progress = 0;
 
+        tagging.creatingTableHeaders();
+
         for (let i = 0; i < data.length; ++i) {
             if (i + 1 == data.length) {
                 progress = 100
             } else {
                 progress = ((i / data.length) * 100).toFixed(2);
             }
-            tagging(data, progress, i);
+            tagging.fillingTable(data, progress, i);
         }
     } catch (error) {
         console.log(error);
