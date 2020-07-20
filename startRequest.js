@@ -17,6 +17,7 @@ async function startRequest(owner, repository) {
             tagging.fillingTable(data, progress, i);
         }
     } catch (error) {
+        tagging.showError(error);
         console.log(error);
     }
 };
