@@ -1,10 +1,12 @@
 'use strict'
 
 async function startRequest(owner, repository) {
-    try {
-        let data = await getIssues(`https://api.github.com/repos/${owner}/${repository}/issues`);
+    const apiUrl = 'https://api.github.com/repos';
+    const issues = 'issues';
+    let progress = 0;
 
-        let progress = 0;
+    try {
+        let data = await getIssues(`${apiUrl}/${owner}/${repository}/${issues}`);
 
         tagging.creatingTableHeaders();
 

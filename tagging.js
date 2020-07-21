@@ -2,7 +2,8 @@
 
 let tagging = {
     creatingTableHeaders() {
-        document.querySelector('tr').innerHTML = '<th scope="col">#</th><th scope="col">номер</th><th scope="col">дата создания</th><th scope="col">заголовок</th><th scope="col">комментарии</th>';
+        document.querySelector('tr')
+        .innerHTML = '<th scope="col">#</th><th scope="col">номер</th><th scope="col">дата создания</th><th scope="col">заголовок</th><th scope="col">комментарии</th>';
     },
     fillingTable(data, progress, i) {
         document.querySelector('span').textContent = `${progress}%`;
